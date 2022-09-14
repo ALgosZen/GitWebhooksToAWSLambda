@@ -2,7 +2,7 @@ const crypto = require('crypto')
 const express = require('express')
 const bodyParser = require('body-parser')
 
-const secret = 'sha256=57a8bf9b8dbd043903f41860d3f48d2510aae4f1d8f97de1aa3468b047eeb460';
+const secret = process.env.SECRET_SEC;
 
 const sigHeaderName = 'X-Hub-Signature-256'
 const sigHashAlg = 'sha256'

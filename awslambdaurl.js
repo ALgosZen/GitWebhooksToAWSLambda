@@ -1,8 +1,10 @@
+require('dotenv').config()
 //create AWS lambda function URL and copy paste
 //the following node js function
 //deploy and get the url to paste in git->settings-> webhook
 const { createHmac } = require('crypto');
-const secretKey = 'classik09';
+console.log(process.env.SECRET_KEY)
+const secretKey = process.env.SECRET_KEY;
 
 exports.handler = async (event) => {
    // const expectedSign = 'sha256=${createHmac(“sha256”, secretKey).update(event.body).digest(“hex”)}';
